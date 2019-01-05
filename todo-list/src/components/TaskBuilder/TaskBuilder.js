@@ -9,7 +9,7 @@ const taskBuilder = (props) => {
             <div>
                 <input type="text"></input>
                 <Button>Kategoria</Button>
-                <Button>Dodaj</Button>
+                <Button clicked={props.add} >Dodaj</Button>
             </div>
             <div>
                 <Button>Dodaj kategorie</Button>

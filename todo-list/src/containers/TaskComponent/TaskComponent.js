@@ -25,11 +25,23 @@ class TaskComponent extends Component {
         })
     }
 
+    postDataHandler = () => {
+        console.log('dziala');
+        const data = {
+            name: "Zmywanie naczyn",
+            category: "domowe"
+        };
+        axios.post('https://to-do-list-14d66.firebaseio.com/tasks.json', data)
+            .then(response => {
+                console.log(response);
+            })
+    }
+
     render() {
         return (
             <Aux>
                 <p>It's a very nice app to store your task using database. Enjoy!</p>
-                <TaskBuilder></TaskBuilder>
+                <TaskBuilder add={this.postDataHandler} ></TaskBuilder>
                 <TasksList tasks={this.state.tasks} />
             </Aux>
         );
