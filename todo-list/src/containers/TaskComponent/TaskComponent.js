@@ -8,8 +8,8 @@ class TaskComponent extends Component {
 
     state = {
         tasks: [
-           { name: 'asdasd'},
-           { name: 'asd'}
+           { name: 'asdasd', color: 'red'},
+           { name: 'asd', color: 'green'}
         ]
     };
 
