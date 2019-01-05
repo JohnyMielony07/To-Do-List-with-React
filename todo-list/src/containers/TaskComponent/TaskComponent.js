@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import TaskBuilder from '../../components/TaskBuilder/TaskBuilder';
 import TasksList from '../../components/TasksList/TasksList';
@@ -8,15 +9,20 @@ class TaskComponent extends Component {
 
     state = {
         tasks: [
-           { name: 'asdasd', color: 'red'},
-           { name: 'asd', color: 'green'}
+        //    { name: 'asdasd', category: 'red'},
+        //    { name: 'asd', category: 'green'}
         ]
-    };
-
-    
+    };   
 
     componentWillMount = () => {
         console.log(this.state.tasks.length); 
+    }
+
+    componentDidMount() {
+        axios.get('https://to-do-list-14d66.firebaseio.com/tasks.json')
+        .then(response => {
+            this.setState({tasks: response.data});
+        })
     }
 
     render() {
