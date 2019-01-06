@@ -1,10 +1,11 @@
 import React from 'react';
+import Button from '@material-ui/core/Button';
 
 const button = (props) => (
     
-        <button onClick={props.clicked}>
+        <Button onClick={props.clicked} to="/open-collective" color="secondary" variant="contained">
             {props.children}            
-        </button>
+        </Button>
     
 );
 
